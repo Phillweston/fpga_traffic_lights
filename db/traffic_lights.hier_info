@@ -1,0 +1,336 @@
+|traffic_lights
+H1[0] <= sdisp:inst6.B[0]
+H1[1] <= sdisp:inst6.B[1]
+H1[2] <= sdisp:inst6.B[2]
+H1[3] <= sdisp:inst6.B[3]
+H1[4] <= sdisp:inst6.B[4]
+H1[5] <= sdisp:inst6.B[5]
+H1[6] <= sdisp:inst6.B[6]
+H1[7] <= sdisp:inst6.B[7]
+clk => fen:inst.clk
+switch => controller:inst1.switch
+H2[0] <= sdisp:inst8.B[0]
+H2[1] <= sdisp:inst8.B[1]
+H2[2] <= sdisp:inst8.B[2]
+H2[3] <= sdisp:inst8.B[3]
+H2[4] <= sdisp:inst8.B[4]
+H2[5] <= sdisp:inst8.B[5]
+H2[6] <= sdisp:inst8.B[6]
+H2[7] <= sdisp:inst8.B[7]
+L1[0] <= sdisp:inst7.B[0]
+L1[1] <= sdisp:inst7.B[1]
+L1[2] <= sdisp:inst7.B[2]
+L1[3] <= sdisp:inst7.B[3]
+L1[4] <= sdisp:inst7.B[4]
+L1[5] <= sdisp:inst7.B[5]
+L1[6] <= sdisp:inst7.B[6]
+L1[7] <= sdisp:inst7.B[7]
+L2[0] <= sdisp:inst9.B[0]
+L2[1] <= sdisp:inst9.B[1]
+L2[2] <= sdisp:inst9.B[2]
+L2[3] <= sdisp:inst9.B[3]
+L2[4] <= sdisp:inst9.B[4]
+L2[5] <= sdisp:inst9.B[5]
+L2[6] <= sdisp:inst9.B[6]
+L2[7] <= sdisp:inst9.B[7]
+O1[0] <= disp2:inst3.O[0]
+O1[1] <= disp2:inst3.O[1]
+O1[2] <= disp2:inst3.O[2]
+O2[0] <= disp2:inst5.O[0]
+O2[1] <= disp2:inst5.O[1]
+O2[2] <= disp2:inst5.O[2]
+
+
+|traffic_lights|sdisp:inst6
+A[0] => Mux0.IN19
+A[0] => Mux1.IN19
+A[0] => Mux2.IN10
+A[0] => Mux3.IN19
+A[0] => Mux4.IN10
+A[0] => Mux5.IN10
+A[0] => Mux6.IN19
+A[1] => Mux0.IN18
+A[1] => Mux1.IN18
+A[1] => Mux2.IN9
+A[1] => Mux3.IN18
+A[1] => Mux4.IN9
+A[1] => Mux5.IN9
+A[1] => Mux6.IN18
+A[2] => Mux0.IN17
+A[2] => Mux1.IN17
+A[2] => Mux2.IN8
+A[2] => Mux3.IN17
+A[2] => Mux4.IN8
+A[2] => Mux5.IN8
+A[2] => Mux6.IN17
+A[3] => Mux0.IN16
+A[3] => Mux1.IN16
+A[3] => Mux3.IN16
+A[3] => Mux6.IN16
+B[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+B[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+B[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+B[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+B[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+B[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+B[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+B[7] <= <VCC>
+
+
+|traffic_lights|disp1:inst2
+D[0] => Div0.IN8
+D[0] => Mod0.IN9
+D[1] => Div0.IN7
+D[1] => Mod0.IN8
+D[2] => Div0.IN6
+D[2] => Mod0.IN7
+D[3] => Div0.IN5
+D[3] => Mod0.IN6
+D[4] => Div0.IN4
+D[4] => Mod0.IN5
+L[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+L[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+L[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+L[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+H[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+H[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+H[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+H[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|traffic_lights|controller:inst1
+clk => northout[0]~reg0.CLK
+clk => northout[1]~reg0.CLK
+clk => northout[2]~reg0.CLK
+clk => northout[3]~reg0.CLK
+clk => northout[4]~reg0.CLK
+clk => eastout[0]~reg0.CLK
+clk => eastout[1]~reg0.CLK
+clk => eastout[2]~reg0.CLK
+clk => eastout[3]~reg0.CLK
+clk => eastout[4]~reg0.CLK
+clk => northout2[0]~reg0.CLK
+clk => northout2[1]~reg0.CLK
+clk => eastout2[0]~reg0.CLK
+clk => eastout2[1]~reg0.CLK
+clk => k.CLK
+clk => m[0].CLK
+clk => m[1].CLK
+clk => m[2].CLK
+clk => m[3].CLK
+clk => m[4].CLK
+switch => northout[0]~reg0.ACLR
+switch => northout[1]~reg0.PRESET
+switch => northout[2]~reg0.PRESET
+switch => northout[3]~reg0.PRESET
+switch => northout[4]~reg0.PRESET
+switch => eastout[0]~reg0.ACLR
+switch => eastout[1]~reg0.PRESET
+switch => eastout[2]~reg0.PRESET
+switch => eastout[3]~reg0.PRESET
+switch => eastout[4]~reg0.PRESET
+switch => northout2[0]~reg0.ACLR
+switch => northout2[1]~reg0.PRESET
+switch => eastout2[0]~reg0.ACLR
+switch => eastout2[1]~reg0.PRESET
+switch => m[4].ENA
+switch => m[3].ENA
+switch => m[2].ENA
+switch => m[1].ENA
+switch => m[0].ENA
+switch => k.ENA
+eastout[0] <= eastout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+eastout[1] <= eastout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+eastout[2] <= eastout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+eastout[3] <= eastout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+eastout[4] <= eastout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+eastout2[0] <= eastout2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+eastout2[1] <= eastout2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+northout[0] <= northout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+northout[1] <= northout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+northout[2] <= northout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+northout[3] <= northout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+northout[4] <= northout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+northout2[0] <= northout2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+northout2[1] <= northout2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|traffic_lights|fen:inst
+clk => x.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+clk => cnt[5].CLK
+clk => cnt[6].CLK
+clk => cnt[7].CLK
+clk => cnt[8].CLK
+clk => cnt[9].CLK
+clk => cnt[10].CLK
+clk => cnt[11].CLK
+clk => cnt[12].CLK
+clk => cnt[13].CLK
+clk => cnt[14].CLK
+clk => cnt[15].CLK
+clk => cnt[16].CLK
+clk => cnt[17].CLK
+clk => cnt[18].CLK
+clk => cnt[19].CLK
+clk => cnt[20].CLK
+clk => cnt[21].CLK
+clk => cnt[22].CLK
+clk => cnt[23].CLK
+clk => cnt[24].CLK
+q <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|traffic_lights|sdisp:inst8
+A[0] => Mux0.IN19
+A[0] => Mux1.IN19
+A[0] => Mux2.IN10
+A[0] => Mux3.IN19
+A[0] => Mux4.IN10
+A[0] => Mux5.IN10
+A[0] => Mux6.IN19
+A[1] => Mux0.IN18
+A[1] => Mux1.IN18
+A[1] => Mux2.IN9
+A[1] => Mux3.IN18
+A[1] => Mux4.IN9
+A[1] => Mux5.IN9
+A[1] => Mux6.IN18
+A[2] => Mux0.IN17
+A[2] => Mux1.IN17
+A[2] => Mux2.IN8
+A[2] => Mux3.IN17
+A[2] => Mux4.IN8
+A[2] => Mux5.IN8
+A[2] => Mux6.IN17
+A[3] => Mux0.IN16
+A[3] => Mux1.IN16
+A[3] => Mux3.IN16
+A[3] => Mux6.IN16
+B[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+B[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+B[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+B[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+B[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+B[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+B[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+B[7] <= <VCC>
+
+
+|traffic_lights|disp1:inst4
+D[0] => Div0.IN8
+D[0] => Mod0.IN9
+D[1] => Div0.IN7
+D[1] => Mod0.IN8
+D[2] => Div0.IN6
+D[2] => Mod0.IN7
+D[3] => Div0.IN5
+D[3] => Mod0.IN6
+D[4] => Div0.IN4
+D[4] => Mod0.IN5
+L[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+L[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+L[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+L[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+H[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+H[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+H[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+H[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|traffic_lights|sdisp:inst7
+A[0] => Mux0.IN19
+A[0] => Mux1.IN19
+A[0] => Mux2.IN10
+A[0] => Mux3.IN19
+A[0] => Mux4.IN10
+A[0] => Mux5.IN10
+A[0] => Mux6.IN19
+A[1] => Mux0.IN18
+A[1] => Mux1.IN18
+A[1] => Mux2.IN9
+A[1] => Mux3.IN18
+A[1] => Mux4.IN9
+A[1] => Mux5.IN9
+A[1] => Mux6.IN18
+A[2] => Mux0.IN17
+A[2] => Mux1.IN17
+A[2] => Mux2.IN8
+A[2] => Mux3.IN17
+A[2] => Mux4.IN8
+A[2] => Mux5.IN8
+A[2] => Mux6.IN17
+A[3] => Mux0.IN16
+A[3] => Mux1.IN16
+A[3] => Mux3.IN16
+A[3] => Mux6.IN16
+B[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+B[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+B[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+B[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+B[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+B[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+B[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+B[7] <= <VCC>
+
+
+|traffic_lights|sdisp:inst9
+A[0] => Mux0.IN19
+A[0] => Mux1.IN19
+A[0] => Mux2.IN10
+A[0] => Mux3.IN19
+A[0] => Mux4.IN10
+A[0] => Mux5.IN10
+A[0] => Mux6.IN19
+A[1] => Mux0.IN18
+A[1] => Mux1.IN18
+A[1] => Mux2.IN9
+A[1] => Mux3.IN18
+A[1] => Mux4.IN9
+A[1] => Mux5.IN9
+A[1] => Mux6.IN18
+A[2] => Mux0.IN17
+A[2] => Mux1.IN17
+A[2] => Mux2.IN8
+A[2] => Mux3.IN17
+A[2] => Mux4.IN8
+A[2] => Mux5.IN8
+A[2] => Mux6.IN17
+A[3] => Mux0.IN16
+A[3] => Mux1.IN16
+A[3] => Mux3.IN16
+A[3] => Mux6.IN16
+B[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+B[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+B[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+B[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+B[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+B[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+B[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+B[7] <= <VCC>
+
+
+|traffic_lights|disp2:inst3
+E[0] => Mux0.IN5
+E[0] => O[1].DATAIN
+E[1] => Mux0.IN4
+E[1] => O[2].DATAIN
+O[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+O[1] <= E[0].DB_MAX_OUTPUT_PORT_TYPE
+O[2] <= E[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|traffic_lights|disp2:inst5
+E[0] => Mux0.IN5
+E[0] => O[1].DATAIN
+E[1] => Mux0.IN4
+E[1] => O[2].DATAIN
+O[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+O[1] <= E[0].DB_MAX_OUTPUT_PORT_TYPE
+O[2] <= E[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
